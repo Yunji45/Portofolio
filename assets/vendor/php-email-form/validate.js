@@ -1,8 +1,3 @@
-/**
-* PHP Email Form Validation - v3.5
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
 (function () {
   "use strict";
 
@@ -79,3 +74,24 @@
   }
 
 })();
+
+// $("#form1").submit(function(event) {
+ 
+//   /* stop form from submitting normally */
+//   event.preventDefault();
+
+//   /* get some values from elements on the page: */
+//   var $form = $(this), url = $form.attr('action');
+// /* kode utuk mengirim data lewat POST menggunakan jQuery */
+//   var posting = $.post(url, {
+//     email : $('#email').val(),
+//     isi : $('#isi').val()
+
+//   });
+
+//   /* jika posting sukses, tambahkan pesan ke div kirim-ok */
+//   posting.done(function(data) {
+//     $("#kirim-ok").append(data);
+
+//   });
+// });
