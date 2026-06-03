@@ -66,6 +66,32 @@ h6 {
   overflow-y: auto;
 }
 
+#hero-three {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.72;
+  z-index: 0;
+}
+
+#header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 40%, rgba(24, 210, 110, 0.2), transparent 28%),
+    linear-gradient(90deg, rgba(4, 4, 4, 0.84), rgba(4, 4, 4, 0.4));
+  pointer-events: none;
+  z-index: 0;
+}
+
+#header .container {
+  position: relative;
+  z-index: 1;
+}
+
 #header * {
   transition: ease-in-out 0.3s;
 }
@@ -155,6 +181,11 @@ h6 {
   top: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.9);
+}
+
+#header.header-top #hero-three,
+#header.header-top::after {
+  opacity: 0;
 }
 
 #header.header-top .social-links,
@@ -402,6 +433,37 @@ section .container {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.tech-orbit {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.tech-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(24, 210, 110, 0.18);
+  transform: rotate(45deg);
+}
+
+#about-three {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.three-fallback {
+  background:
+    linear-gradient(135deg, rgba(24, 210, 110, 0.18), rgba(255, 255, 255, 0.04)),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 18px);
+}
+
 .about-me .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -769,6 +831,7 @@ section .container {
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
   margin-bottom: 30px;
+  perspective: 900px;
 }
 
 .portfolio #portfolio-flters {
@@ -810,6 +873,21 @@ section .container {
   overflow: hidden;
   z-index: 1;
   background: rgba(0, 0, 0, 0.6);
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(var(--tilt-lift, 0));
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.portfolio .portfolio-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--tilt-glow-x, 50%) var(--tilt-glow-y, 50%), rgba(255, 255, 255, 0.22), transparent 38%);
+  opacity: var(--tilt-glow-opacity, 0);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  mix-blend-mode: screen;
 }
 
 .portfolio .portfolio-wrap::before {
@@ -821,7 +899,7 @@ section .container {
   top: 30px;
   bottom: 30px;
   transition: all ease-in-out 0.3s;
-  z-index: 2;
+  z-index: 3;
   opacity: 0;
 }
 
@@ -833,12 +911,13 @@ section .container {
   right: 0;
   bottom: 0;
   text-align: center;
-  z-index: 3;
+  z-index: 4;
   transition: all ease-in-out 0.3s;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: translateZ(36px);
 }
 
 .portfolio .portfolio-wrap .portfolio-info::before {
@@ -885,7 +964,7 @@ section .container {
 
 .portfolio .portfolio-wrap .portfolio-links {
   text-align: center;
-  z-index: 4;
+  z-index: 5;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a {
@@ -920,6 +999,12 @@ section .container {
 .portfolio .portfolio-wrap:hover .portfolio-info::after {
   bottom: 15px;
   right: 15px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio .portfolio-wrap {
+    transform: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -970,6 +1055,29 @@ section .container {
 .portfolio-details .portfolio-info p {
   font-size: 15px;
   padding: 15px 0 0 0;
+}
+
+.project-visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  margin-top: 26px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-visual::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(24, 210, 110, 0.22);
+}
+
+#project-three {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 992px) {

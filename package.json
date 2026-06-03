@@ -1,0 +1,26 @@
+{
+  "name": "portofolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test tests/three-smoke.spec.js --reporter=line"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yunji45/Portofolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yunji45/Portofolio/issues"
+  },
+  "homepage": "https://github.com/Yunji45/Portofolio#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}
