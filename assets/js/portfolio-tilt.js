@@ -20,8 +20,8 @@
       const y = event.clientY - bounds.top;
       const centerX = bounds.width / 2;
       const centerY = bounds.height / 2;
-      const rotateY = ((x - centerX) / centerX) * 7;
-      const rotateX = ((centerY - y) / centerY) * 7;
+      const rotateY = ((x - centerX) / centerX) * 3;
+      const rotateX = ((centerY - y) / centerY) * 3;
 
       card.style.setProperty("--tilt-x", `${rotateX.toFixed(2)}deg`);
       card.style.setProperty("--tilt-y", `${rotateY.toFixed(2)}deg`);
