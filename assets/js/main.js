@@ -94,13 +94,14 @@
             item.classList.remove('section-show')
           })
           section.classList.add('section-show')
-
+          setTimeout(() => window.dispatchEvent(new Event('resize')), 100);
         }, 350);
       } else {
         sections.forEach((item) => {
           item.classList.remove('section-show')
         })
         section.classList.add('section-show')
+        setTimeout(() => window.dispatchEvent(new Event('resize')), 100);
       }
 
       scrollto(this.hash)
@@ -130,6 +131,7 @@
 
         setTimeout(function() {
           initial_nav.classList.add('section-show')
+          setTimeout(() => window.dispatchEvent(new Event('resize')), 100);
         }, 350);
 
         scrollto(window.location.hash)

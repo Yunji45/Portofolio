@@ -114,13 +114,13 @@
   camera.position.z = 8;
 
   function resize() {
-    const width = canvas.clientWidth || window.innerWidth;
-    const height = canvas.clientHeight || window.innerHeight;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5)); // Reduce pixel ratio for performance
-    renderer.setSize(width, height, false);
+    renderer.setSize(width, height);
   }
 
   function movePointer(event) {
